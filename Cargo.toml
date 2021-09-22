@@ -44,6 +44,7 @@ rustc-dep-of-std = [
   "core",
   "libc/rustc-dep-of-std",
   "wasi/rustc-dep-of-std",
+  "cfg-if/rustc-dep-of-std",
 ]
 # Unstable/test-only feature to run wasm-bindgen tests in a browser
 test-in-browser = []
