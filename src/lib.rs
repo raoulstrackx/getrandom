@@ -212,7 +212,7 @@ cfg_if! {
         #[path = "solaris_illumos.rs"] mod imp;
     } else if #[cfg(target_os = "ios")] {
         #[path = "ios.rs"] mod imp;
-    } else if #[cfg(target_os = "linux")] {
+    } else if #[cfg(all(target_os = "linux", not(target_env = "fortanixvme")))] {
         mod util_libc;
         mod use_file;
         #[path = "linux_android.rs"] mod imp;
@@ -247,6 +247,7 @@ cfg_if! {
                   target_os = "l4re",
                   target_os = "uefi",
                   target_env = "sgx",
+                  target_env = "fortanixvme",
               )))] {
         #[path = "rdrand.rs"] mod imp;
     } else if #[cfg(all(target_arch = "wasm32", target_os = "unknown"))] {
