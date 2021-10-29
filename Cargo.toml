@@ -43,6 +43,6 @@ wasm-bindgen = ["bindgen", "js-sys"]
 # Enables dummy implementation for unsupported targets
 dummy = []
 # Unstable feature to support being a libstd dependency
-rustc-dep-of-std = ["compiler_builtins", "core"]
+rustc-dep-of-std = ["compiler_builtins", "core", "cfg-if/rustc-dep-of-std"]
 # Unstable feature for testing
 test-in-browser = ["wasm-bindgen"]
