@@ -46,3 +46,6 @@ dummy = []
 rustc-dep-of-std = ["compiler_builtins", "core", "cfg-if/rustc-dep-of-std"]
 # Unstable feature for testing
 test-in-browser = ["wasm-bindgen"]
+
+[patch.crates-io]
+libc = { git = "https://github.com/raoulstrackx/libc.git", branch = "raoul/version_0_2_105" }
